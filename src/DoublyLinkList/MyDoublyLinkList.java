@@ -1,7 +1,5 @@
 package DoublyLinkList;
 
-import LinkList.Node;
-
 public class MyDoublyLinkList<E> {
 	
 	DNode<E> start;

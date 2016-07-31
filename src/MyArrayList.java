@@ -1,5 +1,4 @@
 
-
 public class MyArrayList<T> implements MyList {
 	
 	Object[] data ;
@@ -94,17 +93,16 @@ public class MyArrayList<T> implements MyList {
 	}
 
 	@Override
-	public void sort()  {
-		// TODO Auto-generated method stub
-		
-	}
-
-	
-	@Override
 	public int getSize() {
 		return data.length-1;
 	}
-	
-	
 
+	@Override
+	public <T> void addList(MyArrayList<T> list) {
+		for(int i=0; i<list.getSize(); i++) {
+			add(list.data[i]);
+		}
+	}
+
+	
 }

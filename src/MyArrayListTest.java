@@ -5,16 +5,12 @@ import org.junit.Test;
 
 public class MyArrayListTest {
 	
-	
-	
-
 	@Test
 	public void testAdd() {
 		MyArrayList<Integer> testObj = new MyArrayList<Integer>() ;
 		testObj.add(11);
 		assertEquals(testObj.data[0], 11);
 	}
-
 
 	@Test
 	public void testAddatIndex() {
@@ -38,9 +34,13 @@ public class MyArrayListTest {
 
 	@Test
 	public void testRemove() {
-		
-
-		
+		MyArrayList<Integer> testObj = new MyArrayList<Integer>() ;
+		testObj.add(11);
+		testObj.add(12);
+		testObj.add(13);
+		testObj.remove(12);
+		assertEquals(2, testObj.getSize());
+		assertEquals(13, testObj.data[1]);
 	}
 
 	@Test
@@ -88,11 +88,6 @@ public class MyArrayListTest {
 	}
 
 	@Test
-	public void testSort() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testGetSize() {
 		MyArrayList<Integer> testObj = new MyArrayList<Integer>() ;
 		assertEquals(0, testObj.getSize());
@@ -101,5 +96,21 @@ public class MyArrayListTest {
 		testObj.add(11);
 		assertEquals(2, testObj.getSize());
 	}
+	
+	@Test
+	public void testAddList() {
+		MyArrayList<Integer> testObj1 = new MyArrayList<Integer>() ;
+		testObj1.add(11);
+		testObj1.add(12);
+		testObj1.add(13);
+		MyArrayList<Integer> testObj2 = new MyArrayList<Integer>() ;
+		testObj2.add(11);
+		testObj2.add(12);
+		testObj2.add(13);
+		
+		testObj1.addList(testObj2);
+		assertEquals(6, testObj1.getSize());
+		assertEquals(13, testObj1.data[5]);
 
+	}
 }

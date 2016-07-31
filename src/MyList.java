@@ -1,4 +1,5 @@
 
+
 public interface MyList {
 	
 	void add(Object object) throws Throwable;
@@ -8,7 +9,7 @@ public interface MyList {
 	boolean remove(Object object);
 	void removeAll();
 	void reverse();
-	void sort();
 	int getSize();
+	<T> void addList(MyArrayList<T> list);
 	
 }

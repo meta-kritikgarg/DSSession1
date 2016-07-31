@@ -85,7 +85,34 @@ public class MyLinkListTest {
 		
 		assertNotEquals(14, x );
 		assertEquals(43, x );
+	}
+	
+	@Test
+	public void testDelete() {
+		MyLinkList<Integer> mylink = new MyLinkList<Integer>();
+		mylink.add(2);
+		mylink.add(4);
+		mylink.add(14);
+		mylink.add(43);
+		mylink.delete(14);
+		assertEquals(3, mylink.getSize());
+		int x = mylink.getByIndex(2);
+		assertEquals(43, x );
+	}
+	
+	@Test
+	public void testRevarsal() {
+		MyLinkList<Integer> mylink = new MyLinkList<Integer>();
+		mylink.add(2);
+		mylink.add(4);
+		mylink.add(14);
+		mylink.add(43);
+		mylink.revarsal();
 		
+		int x = mylink.getByIndex(0);
+		assertEquals(43, x );
+		x = mylink.getByIndex(2);
+		assertEquals(4, x );
 	}
 
 }

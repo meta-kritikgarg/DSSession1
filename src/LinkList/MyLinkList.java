@@ -139,6 +139,37 @@ public class MyLinkList<E> {
 	        size-- ;
 	    }    
 	    
+	    /**
+	     * To delete a object
+	     * @param e object to delete
+	     */
+	    public void delete(E e) {
+	    	Node<E> tmp = start;
+	    	int index = 0;
+	    	while(tmp.getLink()!=null) {
+	    		if(tmp.getData()==e) {
+	    			deleteAtPos(index);
+	    			break;
+	    		}
+	    		tmp=tmp.getLink();
+	    		index++;
+	    	}
+	    	
+	    }
+	    
+	    public void revarsal() {
+	    	Node<E> previous = null;
+	    	Node<E> current = start;
+	    	while(current!=null) {
+	    		Node<E> tmp = current;
+	    		current = current.getLink();
+	    		tmp.setLink(previous);
+	    		previous = tmp;
+	    	}
+	    	start = previous;
+		}
+	    
+	 
 	    
 	    /*  Function to display elements  */
 	    
